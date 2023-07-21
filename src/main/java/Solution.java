@@ -9,7 +9,7 @@ public class Solution {
         for (int i = 1; i < nums.length; i++) {
             for (int j = 0; j < i; j++) {
                 if(nums[i] > nums[j] && nums[i] - nums[j] <= k){
-                    dp[i] = dp[j] + 1;
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
                     maxLIS = Math.max(maxLIS, dp[i]);
                 }
             }
